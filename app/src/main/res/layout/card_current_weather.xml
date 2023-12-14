@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/size_icon_large"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:clipChildren="false">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_weather"
+        style="@style/Widget.WeatherApp.Card.Filled.Large"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_card_current_weather"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:outlineProvider="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_icon_temperature"
+                android:layout_width="@dimen/size_icon_large"
+                android:layout_height="@dimen/size_icon_large"
+                android:layout_marginStart="@dimen/medium_padding"
+                app:layout_constraintEnd_toStartOf="@+id/tv_temperature"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/day_clouds"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_temperature"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium_padding"
+                android:layout_marginEnd="@dimen/medium_padding"
+                android:textAlignment="textEnd"
+                android:textAppearance="@style/TextAppearance.Material3.DisplayMedium"
+                android:textStyle="bold"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintBottom_toTopOf="@+id/tv_desc_temperature"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:maxLines="1"
+                android:ellipsize="end"
+                app:layout_constraintStart_toEndOf="@id/iv_icon_temperature"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="34°C"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_desc_temperature"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/medium_padding"
+                android:layout_marginBottom="@dimen/medium_padding"
+                android:textAlignment="textEnd"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_icon_temperature"
+                app:layout_constraintTop_toBottomOf="@id/tv_temperature"
+                tools:text="@string/over_cast"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
